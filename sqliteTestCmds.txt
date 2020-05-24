@@ -1,0 +1,19 @@
+from flaskBlog import db
+db.create_all()
+from flaskBlog import User, Post
+user_1 = User(username='buddhi', email='b@demo.com', password='password')
+db.session.add(user_1) 
+user_2 = User(username='Adhikari', email='a@demo.com', password='password') 
+db.session.add(user_2)
+db.session.commit()
+User.query.all()
+User.query.first() 
+User.query.filter_by(username='buddhi').all() 
+User.query.filter_by(username='buddhi').first()
+user = User.query.filter_by(username='buddhi').first() 
+ user.id 
+ user = User.query.get(1) 
+ user.posts 
+post.author
+db.drop_all()
+ 
